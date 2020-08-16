@@ -1,6 +1,7 @@
 /* --------------------- FIRST STEP --------------------- */
 //to tell angular this is an angular component we import 
 import { Component } from '@angular/core';
+import { CoursesService } from '../courses.service';
 //decorator func we call it by passing an object to it 
 //and telling it how our component looks like  
 
@@ -31,7 +32,14 @@ import { Component } from '@angular/core';
 //starting with creating a typeScript class
 export class CoursesComponent {
     title = "List of and more you see me i see you ";
-    courses = ["course1", "course2", "course3"];
+    courses;
     // you can def a functions to get values like from api or what ever you want 
 
+    //getting the courses like we getting it from http request  
+    //best implementation is this way 
+    constructor(service: CoursesService) {
+        this.courses = service.getCourses();
+    }
+
 }
+
