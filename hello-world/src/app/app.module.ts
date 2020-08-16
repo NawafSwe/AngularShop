@@ -4,9 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//importing the component to be used 
+import { CoursesComponent } from '../app/components/courses.component';
+
+//registering the component to the app 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, CoursesComponent
   ],
   imports: [
     BrowserModule,
